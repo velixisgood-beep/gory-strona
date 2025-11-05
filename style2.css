@@ -1,29 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+/* 🔧 Ustawiamy całe body jako flexbox i centrujemy zawartość */
 body {
   font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at top, #0a0a0a, #1a1a1a 80%);
+  background: linear-gradient(180deg, #0d0d0d 0%, #1b1b1b 100%);
   color: #f5f5f5;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  display: flex; /* aktywuje flexboxa */
+  justify-content: center; /* centrowanie w poziomie */
+  align-items: center; /* centrowanie w pionie */
+  min-height: 100vh; /* żeby miało pełną wysokość ekranu */
+  flex-direction: column; /* zachowuje pionowe ułożenie */
 }
 
+/* 🔥 Kontener – nasz "kwadrat" */
 .container {
-  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 0 30px rgba(0, 255, 200, 0.2);
+  backdrop-filter: blur(10px);
   width: 90%;
-  max-width: 1000px;
-  margin: 60px auto;
-  background: rgba(20, 20, 20, 0.7);
-  padding: 50px;
-  border-radius: 25px;
-  box-shadow: 0 0 25px rgba(0, 255, 204, 0.1);
-  backdrop-filter: blur(12px);
+  max-width: 800px;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
+
+/* Efekt podświetlenia jak wcześniej */
+.container:hover {
+  box-shadow: 0 0 40px rgba(0, 255, 200, 0.6);
+  transform: scale(1.01);
+}
+
 
 h1 {
   font-size: 2.7rem;
@@ -128,43 +137,115 @@ button:hover {
   box-shadow: 0 0 25px rgba(0, 255, 204, 0.4);
 }
 
-strong {
-   color: #00ffae;  
-}
-.button-container {
-  display: flex;
-  flex-direction: column; /* układa jeden pod drugim */
-  align-items: center;
-  justify-content: center;
-  margin-top: 40px;
-  gap: 20px; /* odstęp między przyciskami */
-}
-
-/* Styl obu przycisków */
-.back-btn, .yt-btn {
-  display: block; /* każdy w osobnej linii */
-  width: fit-content;
-  text-decoration: none;
-  background: linear-gradient(135deg, #00ffc3, #00cc9b);
-  color: #111;
-  font-weight: 600;
-  padding: 12px 28px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 255, 195, 0.4);
-  transition: all 0.3s ease;
-  font-size: 1.1rem;
+footer {
   text-align: center;
+  padding: 20px;
+  color: #777;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(20, 20, 20, 0.6);
 }
 
-/* Efekt hover */
-.back-btn:hover, .yt-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(0, 255, 195, 0.7);
+/* === YOUTUBE LINK === */
+.youtube-link {
+  text-align: center;
+  margin-top: 60px;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
-/* Logo YT na czerwono 🔴 */
-.yt-btn i {
-  color: #ff0000;
-  font-size: 1.3rem;
-  margin-right: 8px;
+.youtube-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  background: linear-gradient(135deg, #ff0000, #cc0000);
+  color: white;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
+
+.youtube-link a:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 35px rgba(255, 0, 0, 0.8);
+  background: linear-gradient(135deg, #ff3838, #ff0000);
+}
+
+/* Animacja wejścia */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer; /* <--- to sprawia, że pojawia się rączka */
+  transition: background 0.2s, color 0.2s;
+  border-radius: 8px;
+}
+
+/* 🔥 Efekt hover — jak najedziesz myszką */
+.suggestion-item:hover {
+  background: rgba(0, 255, 200, 0.3);
+  color: #000;
+  font-weight: 600;
+}
+
+
+#suggestions {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  margin-top: 10px;
+  max-height: 150px;
+  overflow-y: auto;
+  animation: fadeIn 0.2s ease; /* <--- animacja pojawienia */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🔹 Pasek górny z ikoną konta */
+.top-bar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 10px 20px;
+  z-index: 100;
+}
+
+/* 🔸 Ikonka konta */
+.account-icon {
+  font-size: 26px;
+  color: #00ffc3; /* ten turkusowy neonowy kolor co masz */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.account-icon:hover {
+  color: #00bfa6; /* lekko ciemniejszy przy najechaniu */
+  transform: scale(1.2);
+  text-shadow: 0 0 15px #00ffc3;
+}
+
+
+
+
+
+

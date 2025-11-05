@@ -1,31 +1,50 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Peak Your Adventure</title>
-    <link rel="stylesheet" href="style2.css" />
-    <script src="https://kit.fontawesome.com/a2e0a1f7f8.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Peak Your Adventure</title>
+  <link rel="stylesheet" href="style2.css" />
+  <script src="https://kit.fontawesome.com/a2e0a1f7f8.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a2e0a1f7f8.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
-<div class="container">
-<h1>Your Peak Your Adventure</h1>
+   <!-- 🔹 Pasek górny z ikonką konta -->
+<header class="top-bar">
+  <a href="konto.html" class="account-icon">
+    <i class="fa-solid fa-user"></i>
+  </a>
+</header>
+
+  <div class="container">
+    <h1>Your Peak Your Adventure</h1>
     <p class="subtitle">Tu zaczyna się twoja nowa podróż</p>
 
-    <div class="search-section">
-        <input type="text" id="searchInput" placeholder="Wpisz nazwę szczytu..." />
-        <button id="searchBtn">Szukaj 🔎</button>
+    <!-- 🔍 Pole do wyszukiwania -->
+    <div class="search-container">
+      <input type="text" id="peakInput" placeholder="Wpisz nazwę góry..." />
+      <div id="suggestions"></div>
+      <button id="searchButton">Szukaj</button>
     </div>
-    <div class="mountain-list" id="mountainList"></div>
-  <div class="button-container">
-  <a href="index.html" class="back-btn">⬅️ Powrót na stronę główną</a>
-  <a href="https://www.youtube.com/@TwojKanal" target="_blank" class="yt-btn">
-    <i class="fa-brands fa-youtube"></i> Mój kanał YouTube
-  </a>
+
+    <!-- 🏔️ Tutaj wyświetla się wynik -->
+    <div id="mountainList"></div>
+
+    <div class="button-container">
+      <a href="index.html" class="back-btn">Powrót na stronę główną</a>
+      <div class="youtube-link">
+      <a href="https://www.youtube.com/@TwojKanal" target="_blank">
+      <i class="fa-brands fa-youtube"></i> Oglądaj mój kanał
+      </a>
     </div>
-     <script src="app.js"></script>
-     <footer>
-        <p>© 2025 Moja Górska Droga <strong>Aleks Gamrot</strong> — projekt pasjonata gór i kodu 💻</p>
-        </footer>
+
+    
+
+  <footer>
+    <p>© 2025 Moja Górska Droga <strong>Aleks Gamrot</strong> — projekt pasjonata gór i prawdziwych wyzwań</p>
+  </footer>
+
+  <script src="2app.js"></script>
 </body>
 </html>

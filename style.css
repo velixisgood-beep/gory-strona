@@ -1,39 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+/* 🔧 Ustawiamy całe body jako flexbox i centrujemy zawartość */
 body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(180deg, #0d0d0d 0%, #1b1b1b 100%);
   color: #f5f5f5;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  display: flex; /* aktywuje flexboxa */
+  justify-content: center; /* centrowanie w poziomie */
+  align-items: center; /* centrowanie w pionie */
+  min-height: 100vh; /* żeby miało pełną wysokość ekranu */
+  flex-direction: column; /* zachowuje pionowe ułożenie */
 }
 
+/* 🔥 Kontener – nasz "kwadrat" */
 .container {
-  flex: 1;
-  width: 90%;
-  max-width: 1000px;
-  margin: 60px auto;
   background: rgba(255, 255, 255, 0.05);
-  padding: 50px;
-  border-radius: 25px;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 0 30px rgba(0, 255, 200, 0.2);
+  backdrop-filter: blur(10px);
+  width: 90%;
+  max-width: 800px;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
+
+/* Efekt podświetlenia jak wcześniej */
+.container:hover {
+  box-shadow: 0 0 40px rgba(0, 255, 200, 0.6);
+  transform: scale(1.01);
+}
+
+
 
 h1, h2 {
   color: #00ffcc;
   text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+  text-align: center;
 }
 
 p {
   color: #ddd;
-  line-height: 1.7;
-  font-size: 1rem;
+  line-height: 1.9;
+  font-size: 1.1rem;
+  text-align: justify;
+  margin: 20px 0;
 }
 
 button, .btn {
@@ -55,23 +68,42 @@ button:hover, .btn:hover {
   box-shadow: 0 0 25px rgba(0, 255, 204, 0.4);
 }
 
+
+
+/* Sekcje */
+.about,
+.mission {
+  width: 100%;
+  margin: 40px 0;
+}
+
+.about h2,
+.mission h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about p,
+.mission p {
+  text-align: justify;
+  color: #f2f2f2;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin: 0 auto;
+}
+
+/* 🔧 Responsywność */
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 6vw;
+  }
+}
+
 footer {
   text-align: center;
   padding: 20px;
-  color: #aaa;
+  color: #777;
   font-size: 0.9rem;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   background: rgba(20, 20, 20, 0.6);
-}
-
-.about, 
-.about h2, 
-.about p,
-.mission, 
-.mission h2, 
-.mission p {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 800px;
 }
