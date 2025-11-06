@@ -7,10 +7,8 @@
   <link rel="stylesheet" href="style2.css" />
   <script src="https://kit.fontawesome.com/a2e0a1f7f8.js" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/a2e0a1f7f8.js" crossorigin="anonymous"></script>
-
-</head>
+  <head>
 <body>
-   <!-- 🔹 Pasek górny z ikonką konta -->
 <header class="top-bar">
   <a href="konto.html" class="account-icon">
     <i class="fa-solid fa-user"></i>
@@ -20,31 +18,38 @@
   <div class="container">
     <h1>Your Peak Your Adventure</h1>
     <p class="subtitle">Tu zaczyna się twoja nowa podróż</p>
-
-    <!-- 🔍 Pole do wyszukiwania -->
     <div class="search-container">
       <input type="text" id="peakInput" placeholder="Wpisz nazwę góry..." />
       <div id="suggestions"></div>
-      <button id="searchButton">Szukaj</button>
+      <button id="searchButton">SZUKAJ</button>
     </div>
-
-    <!-- 🏔️ Tutaj wyświetla się wynik -->
     <div id="mountainList"></div>
+   <div class="button-row">
+  <button id="homeButton">POWRÓT NA STRONĘ GŁÓWNĄ</button>
+  <button id="feedbackButton">DODAJ OPINIĘ O STRONIE</button>
+</div>
 
-    <div class="button-container">
-      <a href="index.html" class="back-btn">Powrót na stronę główną</a>
-      <div class="youtube-link">
-      <a href="https://www.youtube.com/@TwojKanal" target="_blank">
-      <i class="fa-brands fa-youtube"></i> Oglądaj mój kanał
-      </a>
-    </div>
+<div class="button-row">
+  <button id="youtubeButton">OGLĄDAJ MÓJ KANAŁ</button>
+  <button id="githubButton">GITHUB</button>
+  <button id="instagramButton">INSTAGRAM</button>
+</div>
 
-    
 
-  <footer>
-    <p>© 2025 Moja Górska Droga <strong>Aleks Gamrot</strong> — projekt pasjonata gór i prawdziwych wyzwań</p>
-  </footer>
+<br>
+<section class="bottom-vibe">
+  <p class="quote">„Każdy szczyt wydaje się nie do zdobycia, dopóki nie postawisz pierwszego kroku.”</p>
+  
+  <div class="pulse-bar"></div>
+  
+  <div class="project-tagline">
+    <strong>Your Peak Your Adventure</strong> — Twoja droga. Twój szczyt. Twój czas.
+  </div>
+</section>
 
-  <script src="2app.js"></script>
+<footer>
+  <p>© 2025 Moja Górska Droga <strong>Aleks Gamrot</strong> — projekt pasjonata gór i prawdziwych wyzwań</p>
+</footer>
+<script src="2app.js"></script>
 </body>
 </html>

@@ -668,3 +668,100 @@ a:hover, button:hover {
 }
 
 
+label {
+  color: #00ffcc;
+  font-weight: 600;
+  font-size: 1.15em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 255, 195, 0.6);
+}
+
+input, textarea {
+  width: 100%;
+  background-color: #141414;
+  border: 2px solid rgba(0, 255, 195, 0.4);
+  border-radius: 12px;
+  padding: 14px;
+  color: #fff;
+  font-size: 1.05em;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 15px rgba(0, 255, 195, 0.15);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #00ffcc;
+  box-shadow: 0 0 30px rgba(0, 255, 195, 0.6);
+}
+
+textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.input-group {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  color: #00ffcc;
+  font-weight: 600;
+  font-size: 1.15em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 255, 195, 0.6);
+  animation: textGlow 5s infinite alternate ease-in-out;
+}
+
+footer {
+  margin-top: 70px;
+  text-align: center;
+  color: #ccc;
+  font-size: 1em;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+/* 🔥 Pasek jak w aplikacji */
+footer .neon-line {
+  height: 4px;
+  background: #00ffcc;
+  margin: 25px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0, 255, 195, 0.7);
+  animation: lengthPulse 4s infinite ease-in-out;
+}
+
+/* Efekt "wydłużania i skracania" */
+@keyframes lengthPulse {
+  0%, 100% {
+    width: 40%;
+    box-shadow: 0 0 20px rgba(0, 255, 195, 0.5);
+  }
+  50% {
+    width: 80%;
+    box-shadow: 0 0 50px rgba(0, 255, 195, 0.9);
+  }
+}
+
+/* 🔥 Motto i tekst motywacyjny pulsują jak żywy neon */
+footer .motto, footer .quote {
+  color: #00ffcc;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-shadow: 0 0 12px rgba(0, 255, 195, 0.6);
+  margin-bottom: 15px;
+  animation: textGlow 5s infinite alternate ease-in-out;
+}
